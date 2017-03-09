@@ -1,14 +1,14 @@
-package janbotlib.util;
+package janbotlib;
 
 import janbotlib.GameAnnouncer;
 import janbotlib.GameMaster;
 
-public final class JanBotLibUtil {
+public final class JanBotLib {
     
     /**
      * コンストラクタ
      */
-    public JanBotLibUtil(GameAnnouncer announcer) {
+    public JanBotLib(GameAnnouncer announcer) {
         GameMaster.getInstance().addObserver(announcer);
     }
     
