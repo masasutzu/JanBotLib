@@ -49,4 +49,11 @@ class JanGameMaster extends Observable implements GameMaster {
      */
     private static final JanGameMaster INSTANCE = new JanGameMaster();
     
+    
+    
+    /**
+     * ゲームコントローラ
+     */
+    private JanController _controller = new ChmJanController();
+    
 }
