@@ -1,10 +1,5 @@
 package janbotlib;
 
-import janbotlib.GameAnnouncer;
-import janbotlib.JanGameMaster;
-
-
-
 /**
  * ライブラリ本体
  */
@@ -21,7 +16,7 @@ public final class JanBotLib {
      * 初期化処理
      */
     public static void initialize(GameAnnouncer announcer) {
-        JanGameMaster.getInstance().addObserver(announcer);
+        JanGameMaster.getInstance().initialize(announcer);
     }
     
     /**

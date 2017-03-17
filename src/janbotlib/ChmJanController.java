@@ -2,11 +2,9 @@ package janbotlib;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Observer;
 
 import janbotlib.exception.JanException;
 import wiz.project.jan.JanPai;
-import wiz.project.jan.Player;
 import wiz.project.jan.Wind;
 
 
@@ -27,7 +25,8 @@ class ChmJanController implements JanController {
      * 
      * @param observer 監視者。
      */
-    public ChmJanController(final Observer observer) {
+    public ChmJanController(final GameAnnouncer announcer) {
+        _info.addObserver(announcer);
     }
     
     /**
@@ -51,6 +50,7 @@ class ChmJanController implements JanController {
         }
         
         synchronized (_GAME_INFO_LOCK) {
+            _info.notifyObservers();
         }
     }
     
@@ -61,7 +61,12 @@ class ChmJanController implements JanController {
      */
     private final Object _GAME_INFO_LOCK = new Object();
     
+
     
+    /**
+     * 麻雀ゲーム情報
+     */
+    private JanInfo _info = new JanInfo();
     
     /**
      * ゲーム中か

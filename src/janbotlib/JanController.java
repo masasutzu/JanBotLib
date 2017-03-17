@@ -5,7 +5,6 @@ import java.util.Map;
 
 import janbotlib.exception.JanException;
 import wiz.project.jan.JanPai;
-import wiz.project.jan.Player;
 import wiz.project.jan.Wind;
 
 
